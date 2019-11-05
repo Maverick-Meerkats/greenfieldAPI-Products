@@ -2,7 +2,7 @@
   "name": "greenfieldapi-products",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Maverick-Meerkats/greenfieldAPI-Products/issues"
   },
-  "homepage": "https://github.com/Maverick-Meerkats/greenfieldAPI-Products#readme"
+  "homepage": "https://github.com/Maverick-Meerkats/greenfieldAPI-Products#readme",
+  "dependencies": {
+    "mongoose": "^5.7.8"
+  }
 }
