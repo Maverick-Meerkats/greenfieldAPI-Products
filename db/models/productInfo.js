@@ -8,7 +8,7 @@ const productInfo = new Schema({
   category: String,
   default_price: String,
   features: [
-    {
+    {   
       feature: String,
       value: String
     }
@@ -37,4 +37,7 @@ const productStyles = new Schema({
   ]
 });
 
-const relatedProducts = new Schema([]);
+const relatedProducts = new Schema({
+  product_id: String,
+  products: [Number]
+});
