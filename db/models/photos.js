@@ -1,4 +1,5 @@
 const sequelize = require("../index.js");
+const Sequelize = require("sequelize");
 
 const Photos = sequelize.define(
   "photos",
@@ -26,8 +27,8 @@ Photos.sync();
 
 module.exports = {
   getOne: id => {
-    Photos.findByPk(id).then(result => {
-      console.log(result);
+    return Photos.findByPk(id).then(result => {
+      return result;
     });
   }
 };
