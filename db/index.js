@@ -14,4 +14,7 @@ sequelize
   .catch(err => {
     console.error("Unable to connect to the database:", err);
   });
+
 module.exports = sequelize;
+/// photos style query was over 15+seconds and after indexing it is averaging 62ms
+///skus query at 1.2second before query 89ms after

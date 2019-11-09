@@ -26,9 +26,9 @@ const Photos = sequelize.define(
 Photos.sync();
 
 module.exports = {
-  getOne: id => {
-    return Photos.findByPk(id).then(result => {
-      return result;
-    });
+  getAllPhotos: id => {
+    return sequelize.query(
+      `SELECT thumbnail_url, url FROM photos where "styleId"=${id}`
+    );
   }
 };
