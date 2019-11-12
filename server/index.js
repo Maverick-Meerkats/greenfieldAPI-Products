@@ -3,6 +3,7 @@ const app = express();
 const list = require("./routes/list.js");
 const product = require("./routes/product.js");
 const bodyParser = require("body-parser");
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json

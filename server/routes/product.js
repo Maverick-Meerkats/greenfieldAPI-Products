@@ -4,6 +4,11 @@ const { getAllFeatures } = require("../../db/models/features.js");
 const { getStyles } = require("../../db/models/styles.js");
 const { getAllPhotos } = require("../../db/models/photos.js");
 const { getSkus } = require("../../db/models/skus.js");
+// const StatsD = require("statsd-client");
+// const client = StatsD({
+//   host: "http://localhost"
+// });
+// console.log(client);
 router.get("/:product_id", (req, res) => {
   const id = req.params.product_id;
   getOneProduct(id)
