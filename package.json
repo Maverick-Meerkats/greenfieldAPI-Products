@@ -4,7 +4,9 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-dev": "nodemon server/index.js",
+    "start": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,9 @@
   },
   "homepage": "https://github.com/Maverick-Meerkats/greenfieldAPI-Products#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "csv-parser": "^2.3.1",
+    "express": "^4.17.1",
     "mongoose": "^5.7.8",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
