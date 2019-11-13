@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Maverick-Meerkats/greenfieldAPI-Products#readme",
   "dependencies": {
+    "artillery": "^1.6.0-29",
+    "artillery-plugin-datadog": "^0.2.0",
     "body-parser": "^1.19.0",
     "csv-parser": "^2.3.1",
     "express": "^4.17.1",

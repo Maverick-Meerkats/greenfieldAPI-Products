@@ -1,0 +1,22 @@
+config:
+  target: "http://localhost:8080"
+  phases:
+    - duration: 6
+      arrivalRate: 20
+scenarios:
+  - flow:
+      - get:
+          url: "/products/13"
+plugins:
+  publish-metrics:
+    - type: datadog
+      target: "https://app.datadoghq.com"
+      apiKey: d8389af8ff709d543a8b9cc096219098
+      prefix: artillery.
+      tags:
+        - greenfield:productList
+      event:
+        title:
+          - "productList test"
+        tags:
+          - "greenfield"
