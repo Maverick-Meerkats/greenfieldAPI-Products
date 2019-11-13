@@ -1,0 +1,22 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+plugins:
+  metrics:
+    datadog:
+      apiKey: "d8389af8ff709d543a8b9cc096219098"
+      prefix: artillery.
+      send: true
+      tags:
+        - team:sre
+        - component:eu-payments-backend
+        - region:eu-west-1
+      event:
+        tags:
+          - team:sre
+scenarios:
+  - flow:
+      - get:
+          url: "/products/13"

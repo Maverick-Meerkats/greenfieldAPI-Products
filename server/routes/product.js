@@ -13,11 +13,7 @@ router.get("/:product_id", (req, res) => {
   const id = req.params.product_id;
   getOneProduct(id)
     .then(result => {
-      getAllFeatures(id).then(features => {
-        product = result[0][0];
-        product.features = features[0];
-        res.send(product);
-      });
+      res.send(result[0]);
     })
     .catch(err => {
       console.error(err);
