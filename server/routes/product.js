@@ -33,15 +33,11 @@ let asnycFor = async (styles, photos, skus) => {
 };
 router.get("/:product_id/styles", (req, res) => {
   getStyles(req.params.product_id).then(styles => {
-    asnycFor(styles[0], getAllPhotos, getSkus)
-      .then(updatedStyles => {
-        let resObj = {
-          product_id: req.params.product_id,
-          results: updatedStyles
-        };
-        res.send(resObj);
-      })
-      .catch(err => res.send(err));
+    let resObj = {
+      product_id: req.params.product_id,
+      results: styles[0]
+    };
+    res.send(resObj);
     // getAllPhotos(req.params.product_id).then(photos => {
     //   getSkus(req.params.product_id).then(skus => {
     //     console.log(skus);
