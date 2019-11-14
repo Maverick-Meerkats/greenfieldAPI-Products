@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --detectOpenHandles",
     "server-dev": "nodemon server/index.js",
     "start": "node server/index.js"
   },
@@ -19,12 +19,21 @@
   },
   "homepage": "https://github.com/Maverick-Meerkats/greenfieldAPI-Products#readme",
   "dependencies": {
+    "artillery": "^1.6.0-29",
+    "artillery-plugin-datadog": "^0.2.0",
+    "artillery-plugin-publish-metrics": "^1.0.1",
     "body-parser": "^1.19.0",
     "csv-parser": "^2.3.1",
     "express": "^4.17.1",
     "mongoose": "^5.7.8",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.2"
+    "python": "0.0.4",
+    "sequelize": "^5.21.2",
+    "statsd-client": "^0.4.4"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
   }
 }

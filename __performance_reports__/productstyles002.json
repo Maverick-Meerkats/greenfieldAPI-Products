@@ -1,0 +1,133 @@
+{
+  "aggregate": {
+    "timestamp": "2019-11-14T00:13:30.111Z",
+    "scenariosCreated": 10,
+    "scenariosCompleted": 10,
+    "requestsCompleted": 10,
+    "latency": {
+      "min": 9.8,
+      "max": 116.4,
+      "median": 17.7,
+      "p95": 116.4,
+      "p99": 116.4
+    },
+    "rps": {
+      "count": 10,
+      "mean": 1.06
+    },
+    "scenarioDuration": {
+      "min": 11.4,
+      "max": 157.8,
+      "median": 20.1,
+      "p95": 157.8,
+      "p99": 157.8
+    },
+    "scenarioCounts": {
+      "0": 10
+    },
+    "errors": {},
+    "codes": {
+      "200": 10
+    },
+    "matches": 0,
+    "customStats": {},
+    "counters": {},
+    "scenariosAvoided": 0,
+    "phases": [
+      {
+        "duration": 10,
+        "arrivalRate": 1
+      }
+    ]
+  },
+  "intermediate": [
+    {
+      "timestamp": "2019-11-14T00:13:29.603Z",
+      "scenariosCreated": 9,
+      "scenariosCompleted": 9,
+      "requestsCompleted": 9,
+      "latency": {
+        "min": 9.8,
+        "max": 116.4,
+        "median": 16.9,
+        "p95": 116.4,
+        "p99": 116.4
+      },
+      "rps": {
+        "count": 9,
+        "mean": 1
+      },
+      "scenarioDuration": {
+        "min": 11.4,
+        "max": 157.8,
+        "median": 20,
+        "p95": 157.8,
+        "p99": 157.8
+      },
+      "scenarioCounts": {
+        "0": 9
+      },
+      "errors": {},
+      "codes": {
+        "200": 9
+      },
+      "matches": 0,
+      "latencies": [
+        116430700,
+        15036800,
+        9799300,
+        16907699,
+        26707499,
+        13450100,
+        18474500,
+        22236400,
+        12664200
+      ],
+      "customStats": {},
+      "counters": {},
+      "concurrency": 0,
+      "pendingRequests": 0,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2019-11-14T00:13:30.109Z",
+      "scenariosCreated": 1,
+      "scenariosCompleted": 1,
+      "requestsCompleted": 1,
+      "latency": {
+        "min": 19.7,
+        "max": 19.7,
+        "median": 19.7,
+        "p95": 19.7,
+        "p99": 19.7
+      },
+      "rps": {
+        "count": 1,
+        "mean": 1.96
+      },
+      "scenarioDuration": {
+        "min": 21.1,
+        "max": 21.1,
+        "median": 21.1,
+        "p95": 21.1,
+        "p99": 21.1
+      },
+      "scenarioCounts": {
+        "0": 1
+      },
+      "errors": {},
+      "codes": {
+        "200": 1
+      },
+      "matches": 0,
+      "latencies": [
+        19745900
+      ],
+      "customStats": {},
+      "counters": {},
+      "concurrency": 0,
+      "pendingRequests": 0,
+      "scenariosAvoided": 0
+    }
+  ]
+}

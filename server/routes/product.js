@@ -4,15 +4,16 @@ const { getAllFeatures } = require("../../db/models/features.js");
 const { getStyles } = require("../../db/models/styles.js");
 const { getAllPhotos } = require("../../db/models/photos.js");
 const { getSkus } = require("../../db/models/skus.js");
+// const StatsD = require("statsd-client");
+// const client = StatsD({
+//   host: "http://localhost"
+// });
+// console.log(client);
 router.get("/:product_id", (req, res) => {
   const id = req.params.product_id;
   getOneProduct(id)
     .then(result => {
-      getAllFeatures(id).then(features => {
-        product = result[0][0];
-        product.features = features[0];
-        res.send(product);
-      });
+      res.send(result[0]);
     })
     .catch(err => {
       console.error(err);
@@ -32,15 +33,11 @@ let asnycFor = async (styles, photos, skus) => {
 };
 router.get("/:product_id/styles", (req, res) => {
   getStyles(req.params.product_id).then(styles => {
-    asnycFor(styles[0], getAllPhotos, getSkus)
-      .then(updatedStyles => {
-        let resObj = {
-          product_id: req.params.product_id,
-          results: updatedStyles
-        };
-        res.send(resObj);
-      })
-      .catch(err => res.send(err));
+    let resObj = {
+      product_id: req.params.product_id,
+      results: styles[0]
+    };
+    res.send(resObj);
     // getAllPhotos(req.params.product_id).then(photos => {
     //   getSkus(req.params.product_id).then(skus => {
     //     console.log(skus);

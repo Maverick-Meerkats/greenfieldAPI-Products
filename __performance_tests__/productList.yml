@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+  payload:
+    path: "../../DatabaseData/product.csv"
+    fields:
+      - "id"
+    skipHeader: true
+scenarios:
+  - flow:
+      - get:
+          url: "/products/list"

@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize");
-const url = process.env.POSTGRES_URL||"postgres://postgres:babaka11@localhost:5432/greenFieldProducts"
-const sequelize = new Sequelize(url);
+const sequelize = new Sequelize(
+  "postgres://postgres:babaka11@localhost:5432/greenFieldProducts",
+  { logging: false }
+);
 sequelize
   .authenticate()
   .then(() => {
