@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-  "postgres://postgres:babaka11@localhost:5432/greenFieldProducts",
+  "postgres://postgres:babaka11@db:5432/greenFieldProducts",
   { logging: false }
 );
 sequelize
