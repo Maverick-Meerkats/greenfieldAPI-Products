@@ -7,8 +7,11 @@ services:
     #   Give the container the name my_postgres. You can changes to something else.
     container_name: "my_postgres"
     volumes:
-      - "/greenfield:/var/lib/postgresql/data"
-      - "../db-data:/docker-entrypoint-initdb.d/"
+      - "./greenfield:/var/lib/postgresql/data"
+      - "./db/startup:/docker-entrypoint-initdb.d/"
+      - "../db-data:/var/lib/postgresql/data"
+    # command: - bash -c "cd "docker-entrypoint-initdb.d && psql -U postgres -a -f tables.sql"
+
     #   Setup the username, password, and database name. You can changes these values.
     environment:
       POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
@@ -31,7 +34,7 @@ services:
   #   depends_on:
   #     - db
   #   ports:
-  #     - "80:3000"
+  #     - "3001:3001"
   #   healthcheck:
   #     test: ["CMD-SHELL", "pg_isready -U postgres"]
   #     interval: 10s

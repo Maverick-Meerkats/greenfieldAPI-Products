@@ -25,10 +25,4 @@ const Photos = sequelize.define(
 );
 Photos.sync();
 
-module.exports = {
-  getAllPhotos: id => {
-    return sequelize.query(
-      `SELECT thumbnail_url, url FROM photos where "styleId"=${id}`
-    );
-  }
-};
+module.exports = Photos;
