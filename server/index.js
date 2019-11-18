@@ -11,5 +11,5 @@ app.use(bodyParser.json());
 app.use("/products/list", list);
 app.use("/products/", product);
 
-const port = 3001;
+const port = 3000;
 app.listen(port, () => console.log("listening on port ", port));

@@ -2,9 +2,9 @@ config:
   target: "http://localhost:3000"
   phases:
     - duration: 10
-      arrivalRate: 1
+      arrivalRate: 200
   payload:
-    path: "../../DatabaseData/product.csv"
+    path: "../../db-data/product.csv"
     fields:
       - "id"
     skipHeader: true

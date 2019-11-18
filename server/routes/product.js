@@ -32,18 +32,20 @@ let asnycFor = async (styles, photos, skus) => {
   return styles;
 };
 router.get("/:product_id/styles", (req, res) => {
-  getStyles(req.params.product_id).then(styles => {
-    let resObj = {
-      product_id: req.params.product_id,
-      results: styles[0]
-    };
-    res.send(resObj);
-    // getAllPhotos(req.params.product_id).then(photos => {
-    //   getSkus(req.params.product_id).then(skus => {
-    //     console.log(skus);
-    //   });
-    // });
-  });
+  getStyles(req.params.product_id)
+    .then(styles => {
+      let resObj = {
+        product_id: req.params.product_id,
+        results: styles[0]
+      };
+      res.send(resObj);
+      // getAllPhotos(req.params.product_id).then(photos => {
+      //   getSkus(req.params.product_id).then(skus => {
+      //     console.log(skus);
+      //   });
+      // });
+    })
+    .catch(err => res.sendStatus(400));
 });
 
 module.exports = router;

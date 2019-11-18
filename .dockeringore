@@ -1,0 +1,4 @@
+*/node_modules*
+*/__performance_reports__*
+*/__performance_tests__*
+*/__tests__*

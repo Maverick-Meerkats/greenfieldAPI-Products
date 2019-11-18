@@ -19,9 +19,3 @@ module.exports = {
      ${id}`);
   }
 };
-
-// SELECT s.id as style_id, s.name, s.sale_price, s.original_price, s.default_style,
-// json_agg(json_build_object('thumbnail_url', p.thumbnail_url, 'url',p.url)) as photos,
-// json_agg(json_build_object(sk.size, sk.quantity))as skus from styles s
-// INNER JOIN photos p ON s.id = p."styleId"
-// INNER JOIN skus sk ON s.id = sk.styleid where s.id=2 GROUP BY s.id;

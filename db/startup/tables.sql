@@ -11,7 +11,7 @@ CREATE DATABASE "greenFieldProducts";
     default_price character varying(50) COLLATE pg_catalog."default",
     CONSTRAINT productinfo_pkey PRIMARY KEY (id)
 );
-
+    
 
 -- ALTER TABLE productinfo
 --     OWNER to postgres;
