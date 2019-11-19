@@ -1,84 +1,84 @@
 version: "3"
 services:
-  nginx_balancer:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.nginx
-    ports:
-      - "3000:80"
+  # nginx_balancer:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile.nginx
+  #   ports:
+  #     - "3000:80"
 
   web1:
     build:
       context: .
       dockerfile: ./Dockerfile
     environment:
-      POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
+      POSTGRES_URL: postgres://postgres:babaka11@ec2-3-15-173-230.us-east-2.compute.amazonaws.com:5432/greenFieldProducts
     ports:
-      - "3001:3000"
-    healthcheck:
-      test: ["CMD-shell", "pg_isready -U postgres"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    depends_on:
-      - db
-  web2:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    environment:
-      POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
-    ports:
-      - "3002:3000"
-    healthcheck:
-      test: ["CMD-shell", "pg_isready -U postgres"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    depends_on:
-      - db
-  web3:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    environment:
-      POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
-    ports:
-      - "3003:3000"
-    healthcheck:
-      test: ["CMD-shell", "pg_isready -U postgres"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-    depends_on:
-      - db
-  db-storage:
-    image: "richhorvath11/db-backup:latest"
-    container_name: "db-storage"
-    volumes:
-      - greenfield:/var/lib/postgresql/data
+      - "80:3000"
+    # healthcheck:
+    #   test: ["CMD-shell", "pg_isready -U postgres"]
+    #   interval: 30s
+    #   timeout: 5s
+    #   retries: 5
+    # depends_on:
+    #   - db
+  # web2:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   environment:
+  #     POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
+  #   ports:
+  #     - "3002:3000"
+  #   healthcheck:
+  #     test: ["CMD-shell", "pg_isready -U postgres"]
+  #     interval: 30s
+  #     timeout: 5s
+  #     retries: 5
+  #   depends_on:
+  #     - db
+  # web3:
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   environment:
+  #     POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
+  #   ports:
+  #     - "3003:3000"
+  #   healthcheck:
+  #     test: ["CMD-shell", "pg_isready -U postgres"]
+  #     interval: 30s
+  #     timeout: 5s
+  #     retries: 5
+  #   depends_on:
+  #     - db
+#   db-storage:
+#     image: "richhorvath11/db-backup:latest"
+#     container_name: "db-storage"
+#     volumes:
+#       - greenfield:/var/lib/postgresql/data
 
-  #   #  Create a service named db.
-  db:
-    #   Use the Docker Image postgres. This will pull the newest release.
-    image: "postgres"
-    #   Give the container the name my_postgres. You can changes to something else.
-    container_name: "my_postgres"
-    volumes:
-      - greenfield:/var/lib/postgresql/data
-    # command: - bash -c "cd "docker-entrypoint-initdb.d && psql -U postgres -a -f tables.sql"
+#   #   #  Create a service named db.
+#   db:
+#     #   Use the Docker Image postgres. This will pull the newest release.
+#     image: "postgres"
+#     #   Give the container the name my_postgres. You can changes to something else.
+#     container_name: "my_postgres"
+#     volumes:
+#       - greenfield:/var/lib/postgresql/data
+#     # command: - bash -c "cd "docker-entrypoint-initdb.d && psql -U postgres -a -f tables.sql"
 
-    #   Setup the username, password, and database name. You can changes these values.
-    environment:
-      POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: babaka11
-      POSTGRES_DB: greenFieldProducts
-    ports:
-      - "5432:5432"
-    restart: on-failure
-volumes:
-  greenfield:
+#     #   Setup the username, password, and database name. You can changes these values.
+#     environment:
+#       POSTGRES_URL: postgres://postgres:babaka11@db:5432/greenFieldProducts
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: babaka11
+#       POSTGRES_DB: greenFieldProducts
+#     ports:
+#       - "5432:5432"
+#     restart: on-failure
+# volumes:
+#   greenfield:
 #   Maps port 5432 (localhost) to port 5432 on the container. You can change the ports to fix your needs.
 #   Set a volume some that database is not lost after shutting down the container.
 #   I used the name postgres-data but you can changed it to something else.

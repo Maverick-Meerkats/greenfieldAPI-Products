@@ -42,6 +42,3 @@ const runInsert = async () => {
     await readInterface.on("close", function() {});
   }
 };
-// Photos.sync().then(() => {
-//   runInsert();
-// });
